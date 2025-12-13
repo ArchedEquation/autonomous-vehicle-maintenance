@@ -2,3 +2,4 @@ data
 weights_and_metadata
 best_model.keras
 scaler.pkl
+sentiment_model_weights
