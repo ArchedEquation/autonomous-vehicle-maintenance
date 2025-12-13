@@ -3,3 +3,4 @@ weights_and_metadata
 best_model.keras
 scaler.pkl
 sentiment_model_weights
+best_customer_response_model.keras
