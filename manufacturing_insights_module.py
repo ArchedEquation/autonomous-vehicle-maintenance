@@ -538,3 +538,426 @@ class ManufacturingInsightsModule:
         actions.append("Implement continuous monitoring of this component")
         
         return actions
+
+
+    
+    def _determine_priority(self, analysis: ComponentAnalysis) -> str:
+        """Determine CAPA priority"""
+        
+        critical_count = analysis.severity_distribution.get("CRITICAL", 0)
+        high_count = analysis.severity_distribution.get("HIGH", 0)
+        
+        if critical_count > 0:
+            return "CRITICAL"
+        
+        if analysis.failure_rate >= 0.10:  # 10% failure rate
+            return "CRITICAL"
+        
+        if high_count > 10 or analysis.trend == "increasing":
+            return "HIGH"
+        
+        if analysis.failure_rate >= 0.05:  # 5% failure rate
+            return "HIGH"
+        
+        if analysis.total_failures > 20:
+            return "MEDIUM"
+        
+        return "LOW"
+    
+    def _get_dominant_severity(self, severity_dist: Dict[str, int]) -> str:
+        """Get dominant severity level"""
+        if not severity_dist:
+            return "MEDIUM"
+        
+        if severity_dist.get("CRITICAL", 0) > 0:
+            return "CRITICAL"
+        
+        if severity_dist.get("HIGH", 0) > severity_dist.get("MEDIUM", 0):
+            return "HIGH"
+        
+        return "MEDIUM"
+    
+    def _estimate_affected_vehicles(self, analysis: ComponentAnalysis) -> int:
+        """Estimate total vehicles affected"""
+        # Simple estimation based on batches and models
+        vehicles_per_batch = 1000  # Assumption
+        return len(analysis.affected_batches) * vehicles_per_batch
+
+
+    
+    async def _generate_urgent_capa(
+        self,
+        component: str,
+        failure_mode: str,
+        failures: List[FailureRecord]
+    ):
+        """Generate urgent CAPA report"""
+        
+        # Create quick analysis
+        affected_models = list(set(f.vehicle_model for f in failures))
+        affected_years = sorted(set(f.vehicle_year for f in failures))
+        affected_batches = list(set(f.manufacturing_batch for f in failures))
+        
+        severity_dist = Counter(f.severity for f in failures)
+        dominant_severity = self._get_dominant_severity(dict(severity_dist))
+        
+        report = CAPAReport(
+            report_id=f"CAPA-URGENT-{len(self.capa_reports)+1:06d}",
+            created_date=datetime.utcnow().isoformat(),
+            component=component,
+            defect_description=f"URGENT: {component} experiencing {failure_mode} - {len(failures)} failures in 7 days",
+            root_cause="Under investigation - urgent issue",
+            frequency=len(failures),
+            severity=dominant_severity,
+            affected_vehicle_models=affected_models,
+            affected_vehicle_years=affected_years,
+            affected_batches=affected_batches,
+            estimated_vehicles_affected=len(affected_batches) * 1000,
+            recommended_actions=[
+                "IMMEDIATE: Investigate root cause",
+                "IMMEDIATE: Implement containment actions",
+                "IMMEDIATE: Notify affected customers",
+                "Review recent manufacturing changes",
+                "Inspect affected vehicle batches"
+            ],
+            priority="CRITICAL",
+            status=ActionStatus.PENDING.value
+        )
+        
+        self.capa_reports.append(report)
+        logger.critical(f"Generated urgent CAPA report: {report.report_id}")
+        
+        # Trigger callbacks
+        for callback in self.report_callbacks:
+            try:
+                await callback(report)
+            except Exception as e:
+                logger.error(f"Error in report callback: {e}")
+
+
+    
+    async def track_action_implementation(
+        self,
+        report_id: str,
+        action_description: str,
+        status: ActionStatus,
+        assigned_to: Optional[str] = None,
+        completion_date: Optional[str] = None,
+        notes: Optional[str] = None
+    ):
+        """
+        Track implementation of CAPA actions
+        
+        Args:
+            report_id: CAPA report ID
+            action_description: Description of action
+            status: Current status
+            assigned_to: Person/team assigned
+            completion_date: Date completed
+            notes: Additional notes
+        """
+        
+        if report_id not in self.action_tracking:
+            self.action_tracking[report_id] = {
+                "actions": [],
+                "overall_status": ActionStatus.PENDING.value
+            }
+        
+        action_record = {
+            "action": action_description,
+            "status": status.value,
+            "assigned_to": assigned_to,
+            "completion_date": completion_date,
+            "notes": notes,
+            "updated": datetime.utcnow().isoformat()
+        }
+        
+        self.action_tracking[report_id]["actions"].append(action_record)
+        
+        # Update overall status
+        self._update_capa_status(report_id)
+        
+        logger.info(f"Tracked action for {report_id}: {action_description} - {status.value}")
+
+
+    
+    def _update_capa_status(self, report_id: str):
+        """Update overall CAPA report status based on actions"""
+        
+        tracking = self.action_tracking.get(report_id)
+        if not tracking or not tracking["actions"]:
+            return
+        
+        actions = tracking["actions"]
+        
+        # Check if all actions completed
+        all_completed = all(
+            a["status"] in [ActionStatus.COMPLETED.value, ActionStatus.VERIFIED.value]
+            for a in actions
+        )
+        
+        if all_completed:
+            tracking["overall_status"] = ActionStatus.COMPLETED.value
+            
+            # Update CAPA report
+            for report in self.capa_reports:
+                if report.report_id == report_id:
+                    report.status = ActionStatus.COMPLETED.value
+                    report.implementation_date = datetime.utcnow().isoformat()
+                    break
+        
+        # Check if any in progress
+        elif any(a["status"] == ActionStatus.IN_PROGRESS.value for a in actions):
+            tracking["overall_status"] = ActionStatus.IN_PROGRESS.value
+            
+            for report in self.capa_reports:
+                if report.report_id == report_id:
+                    report.status = ActionStatus.IN_PROGRESS.value
+                    break
+
+
+    
+    async def measure_impact(
+        self,
+        report_id: str,
+        measurement_period_days: int = 30
+    ) -> Dict[str, Any]:
+        """
+        Measure impact of implemented CAPA actions
+        
+        Args:
+            report_id: CAPA report ID
+            measurement_period_days: Period to measure
+            
+        Returns:
+            Impact metrics
+        """
+        
+        # Find the CAPA report
+        report = None
+        for r in self.capa_reports:
+            if r.report_id == report_id:
+                report = r
+                break
+        
+        if not report:
+            logger.error(f"CAPA report {report_id} not found")
+            return {}
+        
+        if not report.implementation_date:
+            logger.warning(f"CAPA report {report_id} not yet implemented")
+            return {}
+        
+        implementation_date = datetime.fromisoformat(report.implementation_date)
+        measurement_end = implementation_date + timedelta(days=measurement_period_days)
+        
+        # Get failures before and after implementation
+        before_failures = [
+            f for f in self.failure_records
+            if f.component == report.component
+            and datetime.fromisoformat(f.timestamp) < implementation_date
+            and datetime.fromisoformat(f.timestamp) > (implementation_date - timedelta(days=measurement_period_days))
+        ]
+        
+        after_failures = [
+            f for f in self.failure_records
+            if f.component == report.component
+            and implementation_date < datetime.fromisoformat(f.timestamp) < measurement_end
+        ]
+        
+        before_count = len(before_failures)
+        after_count = len(after_failures)
+        
+        # Calculate improvement
+        if before_count > 0:
+            reduction_pct = ((before_count - after_count) / before_count) * 100
+        else:
+            reduction_pct = 0
+        
+        impact = {
+            "report_id": report_id,
+            "component": report.component,
+            "measurement_period_days": measurement_period_days,
+            "failures_before": before_count,
+            "failures_after": after_count,
+            "reduction_count": before_count - after_count,
+            "reduction_percentage": reduction_pct,
+            "implementation_date": report.implementation_date,
+            "measurement_date": datetime.utcnow().isoformat(),
+            "effectiveness": "high" if reduction_pct > 50 else "medium" if reduction_pct > 25 else "low"
+        }
+        
+        # Store impact measurement
+        self.impact_measurements[report_id].append(impact)
+        
+        # Update report
+        report.impact_metrics = impact
+        
+        logger.info(
+            f"Impact measurement for {report_id}: "
+            f"{reduction_pct:.1f}% reduction in failures"
+        )
+        
+        return impact
+
+
+    
+    async def _batch_analysis_loop(self):
+        """Background loop for scheduled batch analysis"""
+        
+        # Determine interval
+        if self.batch_analysis_schedule == "weekly":
+            interval_seconds = 7 * 24 * 3600
+        elif self.batch_analysis_schedule == "monthly":
+            interval_seconds = 30 * 24 * 3600
+        else:
+            interval_seconds = 7 * 24 * 3600  # Default to weekly
+        
+        while self.is_running:
+            try:
+                logger.info("Starting scheduled batch analysis")
+                
+                # Perform RCA
+                analyses = await self.perform_root_cause_analysis()
+                
+                # Generate CAPA reports
+                reports = await self.generate_capa_reports(analyses)
+                
+                # Measure impact of completed CAPAs
+                for report in self.capa_reports:
+                    if report.status == ActionStatus.COMPLETED.value and report.implementation_date:
+                        await self.measure_impact(report.report_id)
+                
+                logger.info(f"Batch analysis complete: {len(reports)} new CAPA reports")
+                
+                # Wait for next interval
+                await asyncio.sleep(interval_seconds)
+                
+            except asyncio.CancelledError:
+                break
+            except Exception as e:
+                logger.error(f"Error in batch analysis loop: {e}")
+                await asyncio.sleep(3600)  # Wait 1 hour on error
+
+
+    
+    def generate_summary_report(self) -> Dict[str, Any]:
+        """Generate summary report of all quality insights"""
+        
+        # Overall statistics
+        total_failures = len(self.failure_records)
+        total_capas = len(self.capa_reports)
+        
+        # CAPA status breakdown
+        capa_status = Counter(r.status for r in self.capa_reports)
+        
+        # Priority breakdown
+        capa_priority = Counter(r.priority for r in self.capa_reports)
+        
+        # Top failing components
+        component_failures = Counter(r.component for r in self.failure_records)
+        top_components = component_failures.most_common(10)
+        
+        # Severity distribution
+        severity_dist = Counter(r.severity for r in self.failure_records)
+        
+        # Impact summary
+        total_reduction = 0
+        measured_capas = 0
+        for report_id, measurements in self.impact_measurements.items():
+            if measurements:
+                latest = measurements[-1]
+                total_reduction += latest["reduction_count"]
+                measured_capas += 1
+        
+        summary = {
+            "generated_date": datetime.utcnow().isoformat(),
+            "total_failure_records": total_failures,
+            "total_capa_reports": total_capas,
+            "capa_status_breakdown": dict(capa_status),
+            "capa_priority_breakdown": dict(capa_priority),
+            "top_failing_components": [
+                {"component": comp, "failures": count}
+                for comp, count in top_components
+            ],
+            "severity_distribution": dict(severity_dist),
+            "impact_summary": {
+                "measured_capas": measured_capas,
+                "total_failure_reduction": total_reduction,
+                "avg_reduction_per_capa": total_reduction / measured_capas if measured_capas > 0 else 0
+            },
+            "component_analyses": {
+                comp: analysis.to_dict()
+                for comp, analysis in self.component_analyses.items()
+            }
+        }
+        
+        return summary
+
+
+    
+    def export_capa_reports(self, filepath: str, status_filter: Optional[str] = None):
+        """Export CAPA reports to JSON file"""
+        
+        reports_to_export = self.capa_reports
+        
+        if status_filter:
+            reports_to_export = [
+                r for r in self.capa_reports
+                if r.status == status_filter
+            ]
+        
+        data = {
+            "export_date": datetime.utcnow().isoformat(),
+            "total_reports": len(reports_to_export),
+            "reports": [r.to_dict() for r in reports_to_export]
+        }
+        
+        with open(filepath, 'w') as f:
+            json.dump(data, f, indent=2)
+        
+        logger.info(f"Exported {len(reports_to_export)} CAPA reports to {filepath}")
+    
+    def export_failure_records(self, filepath: str, days: Optional[int] = None):
+        """Export failure records to JSON file"""
+        
+        records_to_export = self.failure_records
+        
+        if days:
+            cutoff = datetime.utcnow() - timedelta(days=days)
+            records_to_export = [
+                r for r in self.failure_records
+                if datetime.fromisoformat(r.timestamp) > cutoff
+            ]
+        
+        data = {
+            "export_date": datetime.utcnow().isoformat(),
+            "total_records": len(records_to_export),
+            "records": [r.to_dict() for r in records_to_export]
+        }
+        
+        with open(filepath, 'w') as f:
+            json.dump(data, f, indent=2)
+        
+        logger.info(f"Exported {len(records_to_export)} failure records to {filepath}")
+    
+    def export_impact_measurements(self, filepath: str):
+        """Export impact measurements to JSON file"""
+        
+        data = {
+            "export_date": datetime.utcnow().isoformat(),
+            "measurements": dict(self.impact_measurements)
+        }
+        
+        with open(filepath, 'w') as f:
+            json.dump(data, f, indent=2)
+        
+        logger.info(f"Exported impact measurements to {filepath}")
+    
+    def register_urgent_alert_callback(self, callback: callable):
+        """Register callback for urgent alerts"""
+        self.urgent_alert_callbacks.append(callback)
+    
+    def register_report_callback(self, callback: callable):
+        """Register callback for new CAPA reports"""
+        self.report_callbacks.append(callback)
