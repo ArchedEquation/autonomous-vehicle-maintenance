@@ -66,6 +66,10 @@ pip install -r requirements.txt
 ### 3. Generate Synthetic Data
 
 ```bash
+# Easy way (recommended):
+python setup_mock_data.py
+
+# Or manually:
 cd mock_infrastructure
 python synthetic_vehicle_data.py
 cd ..

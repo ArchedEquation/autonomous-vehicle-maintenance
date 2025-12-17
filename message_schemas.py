@@ -25,6 +25,7 @@ class MessageType(Enum):
     DIAGNOSIS_REQUEST = "diagnosis_request"
     DIAGNOSIS_RESULT = "diagnosis_result"
     CUSTOMER_ENGAGEMENT = "customer_engagement"
+    CUSTOMER_ENGAGEMENT_RESULT = "customer_engagement_result"
     SCHEDULING_REQUEST = "scheduling_request"
     SCHEDULING_RESULT = "scheduling_result"
     FEEDBACK = "feedback"

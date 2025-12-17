@@ -148,18 +148,39 @@ def load_vehicles():
     """Load vehicles from synthetic data"""
     global vehicles_data, simulators
     
-    try:
-        with open("mock_infrastructure/synthetic_vehicles.json", 'r') as f:
-            vehicles = json.load(f)
-            
-        for vehicle in vehicles:
-            vin = vehicle["vin"]
-            vehicles_data[vin] = vehicle
-            simulators[vin] = TelematicsSimulator(vehicle)
-            
-        print(f"Loaded {len(vehicles)} vehicles")
-    except FileNotFoundError:
-        print("Synthetic vehicles file not found. Run synthetic_vehicle_data.py first.")
+    import os
+    
+    # Try multiple possible paths
+    possible_paths = [
+        "synthetic_vehicles.json",  # Running from mock_infrastructure
+        "mock_infrastructure/synthetic_vehicles.json",  # Running from root
+        os.path.join(os.path.dirname(__file__), "synthetic_vehicles.json")  # Relative to this file
+    ]
+    
+    vehicles = None
+    for filepath in possible_paths:
+        try:
+            with open(filepath, 'r') as f:
+                vehicles = json.load(f)
+                print(f"Loaded vehicles from: {filepath}")
+                break
+        except FileNotFoundError:
+            continue
+    
+    if vehicles is None:
+        print("="*80)
+        print("ERROR: Synthetic vehicles file not found!")
+        print("Please run: python synthetic_vehicle_data.py")
+        print("(from the mock_infrastructure directory)")
+        print("="*80)
+        return
+    
+    for vehicle in vehicles:
+        vin = vehicle["vin"]
+        vehicles_data[vin] = vehicle
+        simulators[vin] = TelematicsSimulator(vehicle)
+        
+    print(f"Loaded {len(vehicles)} vehicles")
 
 
 @app.on_event("startup")

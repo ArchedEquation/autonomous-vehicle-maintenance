@@ -245,14 +245,21 @@ class MainOrchestrationLoop:
         if self._workflow_task:
             self._workflow_task.cancel()
         
-        # Stop all components
-        await self.master_orchestrator.stop()
-        await self.data_analysis_agent.stop()
-        await self.customer_engagement_agent.stop()
-        await self.scheduling_agent.stop()
-        await self.ueba_integration.stop()
-        await self.manufacturing_insights.stop()
-        await self.message_queue.stop()
+        # Stop all components (check if they exist first)
+        if self.master_orchestrator:
+            await self.master_orchestrator.stop()
+        if self.data_analysis_agent:
+            await self.data_analysis_agent.stop()
+        if self.customer_engagement_agent:
+            await self.customer_engagement_agent.stop()
+        if self.scheduling_agent:
+            await self.scheduling_agent.stop()
+        if self.ueba_integration:
+            await self.ueba_integration.stop()
+        if self.manufacturing_insights:
+            await self.manufacturing_insights.stop()
+        if self.message_queue:
+            await self.message_queue.stop()
         
         logger.info("✓ Main orchestration loop stopped")
     

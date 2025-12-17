@@ -1,0 +1,1729 @@
+[
+  {
+    "vin": "1HGBH41JXMN000000",
+    "model": "Truck Max",
+    "year": 2023,
+    "manufacturing_date": "2023-03-02",
+    "manufacturing_batch": "BATCH-2023-09",
+    "current_mileage": 55648,
+    "owner": {
+      "name": "James Garcia",
+      "email": "owner0@example.com",
+      "phone": "+1-555-772-3963",
+      "address": {
+        "street": "1960 Main St",
+        "city": "Philadelphia",
+        "state": "CA",
+        "zip": "68146"
+      }
+    },
+    "registration": {
+      "plate": "DEF1573",
+      "state": "CA",
+      "expiry": "2026-11-09"
+    },
+    "insurance": {
+      "provider": "Progressive",
+      "policy_number": "POL-616060",
+      "expiry": "2026-08-17"
+    },
+    "maintenance_history": [
+      {
+        "date": "2025-01-15T19:25:08.054820",
+        "mileage": 5000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 351,
+        "service_center": "Service Center 5",
+        "technician": "Tech-451"
+      },
+      {
+        "date": "2025-02-20T19:25:08.054820",
+        "mileage": 25000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 178,
+        "service_center": "Service Center 3",
+        "technician": "Tech-513"
+      },
+      {
+        "date": "2025-03-16T19:25:08.054820",
+        "mileage": 10000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 492,
+        "service_center": "Service Center 1",
+        "technician": "Tech-765"
+      },
+      {
+        "date": "2025-04-28T19:25:08.054820",
+        "mileage": 50000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 209,
+        "service_center": "Service Center 3",
+        "technician": "Tech-669"
+      },
+      {
+        "date": "2025-05-04T19:25:08.054820",
+        "mileage": 15000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 113,
+        "service_center": "Service Center 1",
+        "technician": "Tech-446"
+      },
+      {
+        "date": "2025-07-08T19:25:08.054820",
+        "mileage": 30000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check",
+          "Transmission Service",
+          "Coolant Flush"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 135,
+        "service_center": "Service Center 1",
+        "technician": "Tech-234"
+      },
+      {
+        "date": "2025-07-09T19:25:08.054820",
+        "mileage": 40000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check",
+          "Tire Rotation",
+          "Brake Inspection"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 341,
+        "service_center": "Service Center 1",
+        "technician": "Tech-774"
+      },
+      {
+        "date": "2025-11-03T19:25:08.054820",
+        "mileage": 20000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check",
+          "Tire Rotation",
+          "Brake Inspection"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 395,
+        "service_center": "Service Center 2",
+        "technician": "Tech-933"
+      }
+    ],
+    "telematics": {
+      "engine_temperature": 195.0,
+      "oil_pressure": 40.0,
+      "battery_voltage": 12.6,
+      "coolant_temperature": 190.0,
+      "rpm": 0,
+      "speed": 0,
+      "fuel_level": 96,
+      "tire_pressure": {
+        "front_left": 32.0,
+        "front_right": 32.0,
+        "rear_left": 32.0,
+        "rear_right": 32.0
+      },
+      "brake_pad_thickness": {
+        "front_left": 11.45203227972463,
+        "front_right": 9.043014271855345,
+        "rear_left": 9.32541542344619,
+        "rear_right": 11.312769716599025
+      },
+      "odometer": 55648,
+      "last_update": "2025-12-17T19:25:08.054820"
+    },
+    "failure_scenario": {
+      "has_issue": true,
+      "component": "Engine",
+      "issue_description": "Coolant leak developing",
+      "severity": "MEDIUM",
+      "current_condition_percent": 75,
+      "predicted_failure_date": "2026-01-07T19:25:08.054820",
+      "predicted_failure_days": 21,
+      "symptoms": [
+        "Temperature fluctuations",
+        "Coolant level dropping"
+      ],
+      "telematics_indicators": {
+        "engine_temperature": "increasing",
+        "coolant_temperature": "high"
+      },
+      "recommended_action": "Schedule Engine inspection within 21 days"
+    }
+  },
+  {
+    "vin": "1HGBH41JXMN000001",
+    "model": "Sedan Pro",
+    "year": 2022,
+    "manufacturing_date": "2022-12-14",
+    "manufacturing_batch": "BATCH-2022-02",
+    "current_mileage": 45455,
+    "owner": {
+      "name": "Emma Brown",
+      "email": "owner1@example.com",
+      "phone": "+1-555-153-4075",
+      "address": {
+        "street": "9939 Main St",
+        "city": "San Antonio",
+        "state": "CA",
+        "zip": "89773"
+      }
+    },
+    "registration": {
+      "plate": "DEF6949",
+      "state": "CA",
+      "expiry": "2026-08-11"
+    },
+    "insurance": {
+      "provider": "StateFarm",
+      "policy_number": "POL-220829",
+      "expiry": "2026-06-05"
+    },
+    "maintenance_history": [
+      {
+        "date": "2025-01-02T19:25:08.054820",
+        "mileage": 10000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 284,
+        "service_center": "Service Center 5",
+        "technician": "Tech-484"
+      },
+      {
+        "date": "2025-01-14T19:25:08.054820",
+        "mileage": 40000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check",
+          "Tire Rotation",
+          "Brake Inspection"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 385,
+        "service_center": "Service Center 2",
+        "technician": "Tech-634"
+      },
+      {
+        "date": "2025-02-09T19:25:08.054820",
+        "mileage": 5000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 281,
+        "service_center": "Service Center 5",
+        "technician": "Tech-100"
+      },
+      {
+        "date": "2025-03-10T19:25:08.054820",
+        "mileage": 15000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 490,
+        "service_center": "Service Center 3",
+        "technician": "Tech-824"
+      },
+      {
+        "date": "2025-03-21T19:25:08.054820",
+        "mileage": 25000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 342,
+        "service_center": "Service Center 3",
+        "technician": "Tech-973"
+      },
+      {
+        "date": "2025-05-14T19:25:08.054820",
+        "mileage": 30000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check",
+          "Transmission Service",
+          "Coolant Flush"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 403,
+        "service_center": "Service Center 5",
+        "technician": "Tech-215"
+      },
+      {
+        "date": "2025-10-04T19:25:08.054820",
+        "mileage": 20000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check",
+          "Tire Rotation",
+          "Brake Inspection"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 131,
+        "service_center": "Service Center 5",
+        "technician": "Tech-205"
+      }
+    ],
+    "telematics": {
+      "engine_temperature": 195.0,
+      "oil_pressure": 40.0,
+      "battery_voltage": 12.6,
+      "coolant_temperature": 190.0,
+      "rpm": 0,
+      "speed": 0,
+      "fuel_level": 42,
+      "tire_pressure": {
+        "front_left": 32.0,
+        "front_right": 32.0,
+        "rear_left": 32.0,
+        "rear_right": 32.0
+      },
+      "brake_pad_thickness": {
+        "front_left": 9.088172290333084,
+        "front_right": 8.899478422775807,
+        "rear_left": 11.000787519409064,
+        "rear_right": 11.717652074779544
+      },
+      "odometer": 45455,
+      "last_update": "2025-12-17T19:25:08.054820"
+    },
+    "failure_scenario": {
+      "has_issue": true,
+      "component": "Battery",
+      "issue_description": "Battery degradation",
+      "severity": "LOW",
+      "current_condition_percent": 60,
+      "predicted_failure_date": "2026-01-31T19:25:08.054820",
+      "predicted_failure_days": 45,
+      "symptoms": [
+        "Slow cranking",
+        "Voltage drops"
+      ],
+      "telematics_indicators": {
+        "battery_voltage": "decreasing"
+      },
+      "recommended_action": "Schedule Battery inspection within 45 days"
+    }
+  },
+  {
+    "vin": "1HGBH41JXMN000002",
+    "model": "Sedan Pro",
+    "year": 2023,
+    "manufacturing_date": "2023-01-20",
+    "manufacturing_batch": "BATCH-2023-11",
+    "current_mileage": 39381,
+    "owner": {
+      "name": "Robert Rodriguez",
+      "email": "owner2@example.com",
+      "phone": "+1-555-771-2232",
+      "address": {
+        "street": "5269 Main St",
+        "city": "Los Angeles",
+        "state": "CA",
+        "zip": "71247"
+      }
+    },
+    "registration": {
+      "plate": "DEF9496",
+      "state": "CA",
+      "expiry": "2026-09-08"
+    },
+    "insurance": {
+      "provider": "StateFarm",
+      "policy_number": "POL-728716",
+      "expiry": "2026-01-11"
+    },
+    "maintenance_history": [
+      {
+        "date": "2025-01-25T19:25:08.054820",
+        "mileage": 5000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 467,
+        "service_center": "Service Center 2",
+        "technician": "Tech-395"
+      },
+      {
+        "date": "2025-02-28T19:25:08.054820",
+        "mileage": 10000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 312,
+        "service_center": "Service Center 1",
+        "technician": "Tech-700"
+      },
+      {
+        "date": "2025-05-29T19:25:08.054820",
+        "mileage": 30000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check",
+          "Transmission Service",
+          "Coolant Flush"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 426,
+        "service_center": "Service Center 4",
+        "technician": "Tech-527"
+      },
+      {
+        "date": "2025-07-21T19:25:08.054820",
+        "mileage": 15000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 425,
+        "service_center": "Service Center 1",
+        "technician": "Tech-107"
+      },
+      {
+        "date": "2025-09-14T19:25:08.054820",
+        "mileage": 20000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check",
+          "Tire Rotation",
+          "Brake Inspection"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter",
+          "Brake Pads"
+        ],
+        "cost": 181,
+        "service_center": "Service Center 1",
+        "technician": "Tech-637"
+      },
+      {
+        "date": "2025-10-09T19:25:08.054820",
+        "mileage": 25000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 491,
+        "service_center": "Service Center 1",
+        "technician": "Tech-725"
+      }
+    ],
+    "telematics": {
+      "engine_temperature": 195.0,
+      "oil_pressure": 40.0,
+      "battery_voltage": 12.6,
+      "coolant_temperature": 190.0,
+      "rpm": 0,
+      "speed": 0,
+      "fuel_level": 59,
+      "tire_pressure": {
+        "front_left": 32.0,
+        "front_right": 32.0,
+        "rear_left": 32.0,
+        "rear_right": 32.0
+      },
+      "brake_pad_thickness": {
+        "front_left": 8.309476740291744,
+        "front_right": 11.772056307421753,
+        "rear_left": 11.450148159179726,
+        "rear_right": 11.3799445160167
+      },
+      "odometer": 39381,
+      "last_update": "2025-12-17T19:25:08.054820"
+    },
+    "failure_scenario": {
+      "has_issue": true,
+      "component": "Brake System",
+      "issue_description": "Brake pads worn at 85%",
+      "severity": "HIGH",
+      "current_condition_percent": 15,
+      "predicted_failure_date": "2025-12-31T19:25:08.054820",
+      "predicted_failure_days": 14,
+      "symptoms": [
+        "Squealing noise",
+        "Reduced braking performance"
+      ],
+      "telematics_indicators": {
+        "brake_pad_thickness": "critical"
+      },
+      "recommended_action": "Schedule Brake System inspection within 14 days"
+    }
+  },
+  {
+    "vin": "1HGBH41JXMN000003",
+    "model": "Sedan Pro",
+    "year": 2024,
+    "manufacturing_date": "2024-01-09",
+    "manufacturing_batch": "BATCH-2024-02",
+    "current_mileage": 17741,
+    "owner": {
+      "name": "David Garcia",
+      "email": "owner3@example.com",
+      "phone": "+1-555-630-9352",
+      "address": {
+        "street": "3160 Main St",
+        "city": "Dallas",
+        "state": "CA",
+        "zip": "99723"
+      }
+    },
+    "registration": {
+      "plate": "XYZ2420",
+      "state": "CA",
+      "expiry": "2026-05-09"
+    },
+    "insurance": {
+      "provider": "StateFarm",
+      "policy_number": "POL-843435",
+      "expiry": "2026-12-14"
+    },
+    "maintenance_history": [
+      {
+        "date": "2025-01-27T19:25:08.054820",
+        "mileage": 5000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 185,
+        "service_center": "Service Center 4",
+        "technician": "Tech-278"
+      },
+      {
+        "date": "2025-02-22T19:25:08.054820",
+        "mileage": 15000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 177,
+        "service_center": "Service Center 3",
+        "technician": "Tech-500"
+      },
+      {
+        "date": "2025-09-11T19:25:08.054820",
+        "mileage": 10000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 229,
+        "service_center": "Service Center 2",
+        "technician": "Tech-236"
+      }
+    ],
+    "telematics": {
+      "engine_temperature": 195.0,
+      "oil_pressure": 40.0,
+      "battery_voltage": 12.6,
+      "coolant_temperature": 190.0,
+      "rpm": 0,
+      "speed": 0,
+      "fuel_level": 44,
+      "tire_pressure": {
+        "front_left": 32.0,
+        "front_right": 32.0,
+        "rear_left": 32.0,
+        "rear_right": 32.0
+      },
+      "brake_pad_thickness": {
+        "front_left": 9.133192781772975,
+        "front_right": 11.66685845579305,
+        "rear_left": 8.029840713940509,
+        "rear_right": 11.584822965873345
+      },
+      "odometer": 17741,
+      "last_update": "2025-12-17T19:25:08.054820"
+    },
+    "failure_scenario": {
+      "has_issue": true,
+      "component": "Transmission",
+      "issue_description": "Transmission fluid degradation",
+      "severity": "MEDIUM",
+      "current_condition_percent": 50,
+      "predicted_failure_date": "2026-01-16T19:25:08.054820",
+      "predicted_failure_days": 30,
+      "symptoms": [
+        "Hard shifting",
+        "Delayed engagement"
+      ],
+      "telematics_indicators": {
+        "transmission_temp": "elevated"
+      },
+      "recommended_action": "Schedule Transmission inspection within 30 days"
+    }
+  },
+  {
+    "vin": "1HGBH41JXMN000004",
+    "model": "SUV Elite",
+    "year": 2022,
+    "manufacturing_date": "2022-03-23",
+    "manufacturing_batch": "BATCH-2022-09",
+    "current_mileage": 55996,
+    "owner": {
+      "name": "Sarah Rodriguez",
+      "email": "owner4@example.com",
+      "phone": "+1-555-494-3873",
+      "address": {
+        "street": "4166 Main St",
+        "city": "San Antonio",
+        "state": "CA",
+        "zip": "33385"
+      }
+    },
+    "registration": {
+      "plate": "DEF5888",
+      "state": "CA",
+      "expiry": "2026-11-24"
+    },
+    "insurance": {
+      "provider": "Allstate",
+      "policy_number": "POL-868522",
+      "expiry": "2026-04-11"
+    },
+    "maintenance_history": [
+      {
+        "date": "2024-12-19T19:25:08.054820",
+        "mileage": 20000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check",
+          "Tire Rotation",
+          "Brake Inspection"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter",
+          "Brake Pads"
+        ],
+        "cost": 154,
+        "service_center": "Service Center 2",
+        "technician": "Tech-514"
+      },
+      {
+        "date": "2025-02-08T19:25:08.054820",
+        "mileage": 40000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check",
+          "Tire Rotation",
+          "Brake Inspection"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 141,
+        "service_center": "Service Center 1",
+        "technician": "Tech-974"
+      },
+      {
+        "date": "2025-02-18T19:25:08.054820",
+        "mileage": 5000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 207,
+        "service_center": "Service Center 5",
+        "technician": "Tech-882"
+      },
+      {
+        "date": "2025-03-27T19:25:08.054820",
+        "mileage": 15000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 130,
+        "service_center": "Service Center 2",
+        "technician": "Tech-566"
+      },
+      {
+        "date": "2025-03-30T19:25:08.054820",
+        "mileage": 30000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check",
+          "Transmission Service",
+          "Coolant Flush"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 107,
+        "service_center": "Service Center 1",
+        "technician": "Tech-795"
+      },
+      {
+        "date": "2025-05-20T19:25:08.054820",
+        "mileage": 50000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 351,
+        "service_center": "Service Center 3",
+        "technician": "Tech-248"
+      },
+      {
+        "date": "2025-09-15T19:25:08.054820",
+        "mileage": 25000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 188,
+        "service_center": "Service Center 3",
+        "technician": "Tech-706"
+      },
+      {
+        "date": "2025-09-16T19:25:08.054820",
+        "mileage": 10000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 302,
+        "service_center": "Service Center 2",
+        "technician": "Tech-999"
+      }
+    ],
+    "telematics": {
+      "engine_temperature": 195.0,
+      "oil_pressure": 40.0,
+      "battery_voltage": 12.6,
+      "coolant_temperature": 190.0,
+      "rpm": 0,
+      "speed": 0,
+      "fuel_level": 99,
+      "tire_pressure": {
+        "front_left": 32.0,
+        "front_right": 32.0,
+        "rear_left": 32.0,
+        "rear_right": 32.0
+      },
+      "brake_pad_thickness": {
+        "front_left": 11.915661834271136,
+        "front_right": 11.159817493442652,
+        "rear_left": 10.658103741311704,
+        "rear_right": 8.361957436456677
+      },
+      "odometer": 55996,
+      "last_update": "2025-12-17T19:25:08.054820"
+    },
+    "failure_scenario": {
+      "has_issue": true,
+      "component": "Tire",
+      "issue_description": "Uneven tire wear",
+      "severity": "LOW",
+      "current_condition_percent": 40,
+      "predicted_failure_date": "2026-02-15T19:25:08.054820",
+      "predicted_failure_days": 60,
+      "symptoms": [
+        "Vibration",
+        "Pulling to one side"
+      ],
+      "telematics_indicators": {
+        "tire_pressure": "imbalanced"
+      },
+      "recommended_action": "Schedule Tire inspection within 60 days"
+    }
+  },
+  {
+    "vin": "1HGBH41JXMN000005",
+    "model": "Hybrid Eco",
+    "year": 2024,
+    "manufacturing_date": "2024-03-11",
+    "manufacturing_batch": "BATCH-2024-02",
+    "current_mileage": 8871,
+    "owner": {
+      "name": "Emma Williams",
+      "email": "owner5@example.com",
+      "phone": "+1-555-896-9145",
+      "address": {
+        "street": "9752 Main St",
+        "city": "Houston",
+        "state": "CA",
+        "zip": "55574"
+      }
+    },
+    "registration": {
+      "plate": "XYZ5440",
+      "state": "CA",
+      "expiry": "2026-09-16"
+    },
+    "insurance": {
+      "provider": "Geico",
+      "policy_number": "POL-777323",
+      "expiry": "2026-12-14"
+    },
+    "maintenance_history": [
+      {
+        "date": "2025-03-04T19:25:08.054820",
+        "mileage": 5000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 100,
+        "service_center": "Service Center 3",
+        "technician": "Tech-466"
+      }
+    ],
+    "telematics": {
+      "engine_temperature": 195.0,
+      "oil_pressure": 40.0,
+      "battery_voltage": 12.6,
+      "coolant_temperature": 190.0,
+      "rpm": 0,
+      "speed": 0,
+      "fuel_level": 75,
+      "tire_pressure": {
+        "front_left": 32.0,
+        "front_right": 32.0,
+        "rear_left": 32.0,
+        "rear_right": 32.0
+      },
+      "brake_pad_thickness": {
+        "front_left": 10.822530796645058,
+        "front_right": 9.192775499576895,
+        "rear_left": 11.752741475343354,
+        "rear_right": 10.192246779806394
+      },
+      "odometer": 8871,
+      "last_update": "2025-12-17T19:25:08.054820"
+    },
+    "failure_scenario": {
+      "has_issue": true,
+      "component": "Electrical System",
+      "issue_description": "Alternator bearing wear",
+      "severity": "MEDIUM",
+      "current_condition_percent": 55,
+      "predicted_failure_date": "2026-01-11T19:25:08.054820",
+      "predicted_failure_days": 25,
+      "symptoms": [
+        "Whining noise",
+        "Dimming lights"
+      ],
+      "telematics_indicators": {
+        "battery_voltage": "fluctuating"
+      },
+      "recommended_action": "Schedule Electrical System inspection within 25 days"
+    }
+  },
+  {
+    "vin": "1HGBH41JXMN000006",
+    "model": "Compact City",
+    "year": 2021,
+    "manufacturing_date": "2021-11-16",
+    "manufacturing_batch": "BATCH-2021-08",
+    "current_mileage": 45010,
+    "owner": {
+      "name": "Michael Miller",
+      "email": "owner6@example.com",
+      "phone": "+1-555-628-8015",
+      "address": {
+        "street": "6044 Main St",
+        "city": "San Antonio",
+        "state": "CA",
+        "zip": "33240"
+      }
+    },
+    "registration": {
+      "plate": "XYZ7349",
+      "state": "CA",
+      "expiry": "2026-06-19"
+    },
+    "insurance": {
+      "provider": "StateFarm",
+      "policy_number": "POL-540940",
+      "expiry": "2026-02-07"
+    },
+    "maintenance_history": [
+      {
+        "date": "2025-02-23T19:25:08.054820",
+        "mileage": 5000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 461,
+        "service_center": "Service Center 1",
+        "technician": "Tech-593"
+      },
+      {
+        "date": "2025-03-04T19:25:08.054820",
+        "mileage": 10000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 417,
+        "service_center": "Service Center 3",
+        "technician": "Tech-408"
+      },
+      {
+        "date": "2025-04-20T19:25:08.054820",
+        "mileage": 25000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 235,
+        "service_center": "Service Center 4",
+        "technician": "Tech-272"
+      },
+      {
+        "date": "2025-06-07T19:25:08.054820",
+        "mileage": 20000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check",
+          "Tire Rotation",
+          "Brake Inspection"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 433,
+        "service_center": "Service Center 3",
+        "technician": "Tech-384"
+      },
+      {
+        "date": "2025-06-28T19:25:08.054820",
+        "mileage": 15000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 157,
+        "service_center": "Service Center 3",
+        "technician": "Tech-977"
+      },
+      {
+        "date": "2025-07-24T19:25:08.054820",
+        "mileage": 30000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check",
+          "Transmission Service",
+          "Coolant Flush"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 146,
+        "service_center": "Service Center 5",
+        "technician": "Tech-217"
+      },
+      {
+        "date": "2025-11-02T19:25:08.054820",
+        "mileage": 40000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check",
+          "Tire Rotation",
+          "Brake Inspection"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 129,
+        "service_center": "Service Center 2",
+        "technician": "Tech-439"
+      }
+    ],
+    "telematics": {
+      "engine_temperature": 195.0,
+      "oil_pressure": 40.0,
+      "battery_voltage": 12.6,
+      "coolant_temperature": 190.0,
+      "rpm": 0,
+      "speed": 0,
+      "fuel_level": 25,
+      "tire_pressure": {
+        "front_left": 32.0,
+        "front_right": 32.0,
+        "rear_left": 32.0,
+        "rear_right": 32.0
+      },
+      "brake_pad_thickness": {
+        "front_left": 11.50235955376895,
+        "front_right": 9.789154433987981,
+        "rear_left": 10.848343763185756,
+        "rear_right": 11.406725393826754
+      },
+      "odometer": 45010,
+      "last_update": "2025-12-17T19:25:08.054820"
+    },
+    "failure_scenario": {
+      "has_issue": true,
+      "component": "Suspension",
+      "issue_description": "Strut deterioration",
+      "severity": "LOW",
+      "current_condition_percent": 45,
+      "predicted_failure_date": "2026-02-05T19:25:08.054820",
+      "predicted_failure_days": 50,
+      "symptoms": [
+        "Bouncing",
+        "Uneven tire wear"
+      ],
+      "telematics_indicators": {
+        "ride_quality": "degraded"
+      },
+      "recommended_action": "Schedule Suspension inspection within 50 days"
+    }
+  },
+  {
+    "vin": "1HGBH41JXMN000007",
+    "model": "Hybrid Eco",
+    "year": 2021,
+    "manufacturing_date": "2021-05-25",
+    "manufacturing_batch": "BATCH-2021-05",
+    "current_mileage": 44000,
+    "owner": {
+      "name": "John Brown",
+      "email": "owner7@example.com",
+      "phone": "+1-555-628-8453",
+      "address": {
+        "street": "5633 Main St",
+        "city": "San Diego",
+        "state": "CA",
+        "zip": "55854"
+      }
+    },
+    "registration": {
+      "plate": "ABC7091",
+      "state": "CA",
+      "expiry": "2026-10-05"
+    },
+    "insurance": {
+      "provider": "Geico",
+      "policy_number": "POL-978282",
+      "expiry": "2026-08-03"
+    },
+    "maintenance_history": [
+      {
+        "date": "2025-02-05T19:25:08.054820",
+        "mileage": 5000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 419,
+        "service_center": "Service Center 1",
+        "technician": "Tech-863"
+      },
+      {
+        "date": "2025-03-04T19:25:08.054820",
+        "mileage": 20000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check",
+          "Tire Rotation",
+          "Brake Inspection"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 199,
+        "service_center": "Service Center 2",
+        "technician": "Tech-201"
+      },
+      {
+        "date": "2025-05-01T19:25:08.054820",
+        "mileage": 10000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 472,
+        "service_center": "Service Center 2",
+        "technician": "Tech-602"
+      },
+      {
+        "date": "2025-08-15T19:25:08.054820",
+        "mileage": 40000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check",
+          "Tire Rotation",
+          "Brake Inspection"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 124,
+        "service_center": "Service Center 2",
+        "technician": "Tech-613"
+      },
+      {
+        "date": "2025-10-22T19:25:08.054820",
+        "mileage": 15000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 464,
+        "service_center": "Service Center 3",
+        "technician": "Tech-537"
+      },
+      {
+        "date": "2025-10-26T19:25:08.054820",
+        "mileage": 25000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 159,
+        "service_center": "Service Center 5",
+        "technician": "Tech-268"
+      },
+      {
+        "date": "2025-11-09T19:25:08.054820",
+        "mileage": 30000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check",
+          "Transmission Service",
+          "Coolant Flush"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 292,
+        "service_center": "Service Center 1",
+        "technician": "Tech-994"
+      }
+    ],
+    "telematics": {
+      "engine_temperature": 195.0,
+      "oil_pressure": 40.0,
+      "battery_voltage": 12.6,
+      "coolant_temperature": 190.0,
+      "rpm": 0,
+      "speed": 0,
+      "fuel_level": 43,
+      "tire_pressure": {
+        "front_left": 32.0,
+        "front_right": 32.0,
+        "rear_left": 32.0,
+        "rear_right": 32.0
+      },
+      "brake_pad_thickness": {
+        "front_left": 10.513170743508747,
+        "front_right": 9.550356555681718,
+        "rear_left": 9.96019848635397,
+        "rear_right": 10.321881487361994
+      },
+      "odometer": 44000,
+      "last_update": "2025-12-17T19:25:08.054820"
+    },
+    "failure_scenario": {
+      "has_issue": true,
+      "component": "Fuel System",
+      "issue_description": "Fuel pump efficiency declining",
+      "severity": "MEDIUM",
+      "current_condition_percent": 65,
+      "predicted_failure_date": "2026-01-21T19:25:08.054820",
+      "predicted_failure_days": 35,
+      "symptoms": [
+        "Engine hesitation",
+        "Difficulty starting"
+      ],
+      "telematics_indicators": {
+        "fuel_pressure": "low"
+      },
+      "recommended_action": "Schedule Fuel System inspection within 35 days"
+    }
+  },
+  {
+    "vin": "1HGBH41JXMN000008",
+    "model": "Compact City",
+    "year": 2022,
+    "manufacturing_date": "2022-06-26",
+    "manufacturing_batch": "BATCH-2022-02",
+    "current_mileage": 40600,
+    "owner": {
+      "name": "David Johnson",
+      "email": "owner8@example.com",
+      "phone": "+1-555-892-6322",
+      "address": {
+        "street": "7766 Main St",
+        "city": "Phoenix",
+        "state": "CA",
+        "zip": "87468"
+      }
+    },
+    "registration": {
+      "plate": "ABC7749",
+      "state": "CA",
+      "expiry": "2026-11-13"
+    },
+    "insurance": {
+      "provider": "Progressive",
+      "policy_number": "POL-197254",
+      "expiry": "2026-11-10"
+    },
+    "maintenance_history": [
+      {
+        "date": "2025-03-07T19:25:08.054820",
+        "mileage": 40000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check",
+          "Tire Rotation",
+          "Brake Inspection"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 446,
+        "service_center": "Service Center 1",
+        "technician": "Tech-135"
+      },
+      {
+        "date": "2025-04-06T19:25:08.054820",
+        "mileage": 10000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 432,
+        "service_center": "Service Center 1",
+        "technician": "Tech-119"
+      },
+      {
+        "date": "2025-06-20T19:25:08.054820",
+        "mileage": 15000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 245,
+        "service_center": "Service Center 4",
+        "technician": "Tech-367"
+      },
+      {
+        "date": "2025-07-11T19:25:08.054820",
+        "mileage": 25000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 348,
+        "service_center": "Service Center 2",
+        "technician": "Tech-898"
+      },
+      {
+        "date": "2025-08-23T19:25:08.054820",
+        "mileage": 5000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 187,
+        "service_center": "Service Center 2",
+        "technician": "Tech-493"
+      },
+      {
+        "date": "2025-08-24T19:25:08.054820",
+        "mileage": 20000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check",
+          "Tire Rotation",
+          "Brake Inspection"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 279,
+        "service_center": "Service Center 2",
+        "technician": "Tech-198"
+      },
+      {
+        "date": "2025-09-22T19:25:08.054820",
+        "mileage": 30000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check",
+          "Transmission Service",
+          "Coolant Flush"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 168,
+        "service_center": "Service Center 2",
+        "technician": "Tech-582"
+      }
+    ],
+    "telematics": {
+      "engine_temperature": 195.0,
+      "oil_pressure": 40.0,
+      "battery_voltage": 12.6,
+      "coolant_temperature": 190.0,
+      "rpm": 0,
+      "speed": 0,
+      "fuel_level": 100,
+      "tire_pressure": {
+        "front_left": 32.0,
+        "front_right": 32.0,
+        "rear_left": 32.0,
+        "rear_right": 32.0
+      },
+      "brake_pad_thickness": {
+        "front_left": 8.208971970350385,
+        "front_right": 10.055386919431824,
+        "rear_left": 11.25290230199743,
+        "rear_right": 8.052560944804563
+      },
+      "odometer": 40600,
+      "last_update": "2025-12-17T19:25:08.054820"
+    },
+    "failure_scenario": {
+      "has_issue": true,
+      "component": "Cooling System",
+      "issue_description": "Radiator clogging",
+      "severity": "HIGH",
+      "current_condition_percent": 30,
+      "predicted_failure_date": "2026-01-04T19:25:08.054820",
+      "predicted_failure_days": 18,
+      "symptoms": [
+        "Overheating",
+        "Poor heater performance"
+      ],
+      "telematics_indicators": {
+        "coolant_temperature": "high"
+      },
+      "recommended_action": "Schedule Cooling System inspection within 18 days"
+    }
+  },
+  {
+    "vin": "1HGBH41JXMN000009",
+    "model": "Truck Max",
+    "year": 2020,
+    "manufacturing_date": "2020-12-16",
+    "manufacturing_batch": "BATCH-2020-10",
+    "current_mileage": 128237,
+    "owner": {
+      "name": "Lisa Johnson",
+      "email": "owner9@example.com",
+      "phone": "+1-555-292-4092",
+      "address": {
+        "street": "6063 Main St",
+        "city": "Philadelphia",
+        "state": "CA",
+        "zip": "21668"
+      }
+    },
+    "registration": {
+      "plate": "ABC8528",
+      "state": "CA",
+      "expiry": "2026-11-02"
+    },
+    "insurance": {
+      "provider": "Progressive",
+      "policy_number": "POL-123593",
+      "expiry": "2026-01-20"
+    },
+    "maintenance_history": [
+      {
+        "date": "2025-01-27T19:25:08.054820",
+        "mileage": 60000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check",
+          "Tire Rotation",
+          "Brake Inspection",
+          "Transmission Service",
+          "Coolant Flush"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 381,
+        "service_center": "Service Center 5",
+        "technician": "Tech-858"
+      },
+      {
+        "date": "2025-01-28T19:25:08.054820",
+        "mileage": 40000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check",
+          "Tire Rotation",
+          "Brake Inspection"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 271,
+        "service_center": "Service Center 1",
+        "technician": "Tech-777"
+      },
+      {
+        "date": "2025-02-12T19:25:08.054820",
+        "mileage": 5000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 349,
+        "service_center": "Service Center 3",
+        "technician": "Tech-861"
+      },
+      {
+        "date": "2025-02-28T19:25:08.054820",
+        "mileage": 75000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 270,
+        "service_center": "Service Center 3",
+        "technician": "Tech-336"
+      },
+      {
+        "date": "2025-03-02T19:25:08.054820",
+        "mileage": 10000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 252,
+        "service_center": "Service Center 4",
+        "technician": "Tech-238"
+      },
+      {
+        "date": "2025-03-03T19:25:08.054820",
+        "mileage": 30000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check",
+          "Transmission Service",
+          "Coolant Flush"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 284,
+        "service_center": "Service Center 4",
+        "technician": "Tech-498"
+      },
+      {
+        "date": "2025-03-14T19:25:08.054820",
+        "mileage": 50000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 279,
+        "service_center": "Service Center 1",
+        "technician": "Tech-486"
+      },
+      {
+        "date": "2025-06-18T19:25:08.054820",
+        "mileage": 20000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [
+          "Oil Change",
+          "Filter Replacement",
+          "Fluid Check",
+          "Tire Rotation",
+          "Brake Inspection"
+        ],
+        "parts_replaced": [
+          "Oil Filter",
+          "Engine Oil",
+          "Air Filter",
+          "Cabin Filter"
+        ],
+        "cost": 165,
+        "service_center": "Service Center 4",
+        "technician": "Tech-447"
+      },
+      {
+        "date": "2025-07-24T19:25:08.054820",
+        "mileage": 15000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 367,
+        "service_center": "Service Center 2",
+        "technician": "Tech-245"
+      },
+      {
+        "date": "2025-10-18T19:25:08.054820",
+        "mileage": 25000,
+        "service_type": "Scheduled Maintenance",
+        "services_performed": [],
+        "parts_replaced": [],
+        "cost": 404,
+        "service_center": "Service Center 4",
+        "technician": "Tech-952"
+      }
+    ],
+    "telematics": {
+      "engine_temperature": 195.0,
+      "oil_pressure": 40.0,
+      "battery_voltage": 12.6,
+      "coolant_temperature": 190.0,
+      "rpm": 0,
+      "speed": 0,
+      "fuel_level": 47,
+      "tire_pressure": {
+        "front_left": 32.0,
+        "front_right": 32.0,
+        "rear_left": 32.0,
+        "rear_right": 32.0
+      },
+      "brake_pad_thickness": {
+        "front_left": 9.944359475987493,
+        "front_right": 8.414508431687288,
+        "rear_left": 11.005503129157997,
+        "rear_right": 9.514598568988486
+      },
+      "odometer": 128237,
+      "last_update": "2025-12-17T19:25:08.054820"
+    },
+    "failure_scenario": {
+      "has_issue": true,
+      "component": "Brake System",
+      "issue_description": "Brake fluid contamination",
+      "severity": "MEDIUM",
+      "current_condition_percent": 50,
+      "predicted_failure_date": "2026-01-14T19:25:08.054820",
+      "predicted_failure_days": 28,
+      "symptoms": [
+        "Spongy brake pedal",
+        "Reduced braking"
+      ],
+      "telematics_indicators": {
+        "brake_fluid_level": "low"
+      },
+      "recommended_action": "Schedule Brake System inspection within 28 days"
+    }
+  }
+]
