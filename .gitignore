@@ -2,7 +2,7 @@ data
 weights_and_metadata
 best_model.keras
 scaler.pkl
-deep_vae_full_model
+
 best_customer_response_model.keras
 .ipynb_checkpoints
 
