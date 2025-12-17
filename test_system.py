@@ -23,6 +23,13 @@ def test_imports():
         return False
     
     try:
+        from customer_engagement_agent import CustomerEngagementAgent, DiagnosticReport, CustomerProfile
+        print("  ✓ Customer Engagement Agent imported")
+    except Exception as e:
+        print(f"  ✗ Customer Engagement Agent import failed: {e}")
+        return False
+    
+    try:
         from orchestrator_integration_example import VehicleMaintenanceAgentSystem
         print("  ✓ Integration Example imported")
     except Exception as e:
@@ -147,23 +154,90 @@ def test_master_orchestrator():
         return False
 
 
+def test_customer_engagement_agent():
+    """Test Customer Engagement Agent basic functionality"""
+    print("\nTesting Customer Engagement Agent...")
+    
+    try:
+        from customer_engagement_agent import (
+            CustomerEngagementAgent,
+            DiagnosticReport,
+            CustomerProfile,
+            UrgencyLevel,
+            CommunicationChannel
+        )
+        
+        # Initialize agent
+        agent = CustomerEngagementAgent()
+        print("  ✓ Agent initialized")
+        
+        # Create test diagnostic report
+        report = DiagnosticReport(
+            vehicle_id='TEST001',
+            customer_id='CUST001',
+            urgency_level=UrgencyLevel.URGENT,
+            issues_detected=['battery_degradation'],
+            recommended_services=['battery_test', 'battery_replacement'],
+            estimated_cost=200.00,
+            risk_description='vehicle may not start',
+            time_to_failure_days=7,
+            safety_critical=False
+        )
+        print("  ✓ Diagnostic report created")
+        
+        # Create test customer profile
+        customer = CustomerProfile(
+            customer_id='CUST001',
+            name='Test Customer',
+            phone='+1-555-0100',
+            email='test@example.com',
+            preferred_channel=CommunicationChannel.PHONE_CALL,
+            preferred_time='morning',
+            communication_style='formal'
+        )
+        print("  ✓ Customer profile created")
+        
+        # Engage customer
+        result = agent.engage_customer(report, customer)
+        print(f"  ✓ Engagement completed: Outcome={result.outcome.value}")
+        
+        # Check result structure
+        assert result.customer_id == 'CUST001'
+        assert result.vehicle_id == 'TEST001'
+        assert result.outcome is not None
+        assert isinstance(result.conversation_transcript, list)
+        print("  ✓ Result structure validated")
+        
+        return True
+        
+    except Exception as e:
+        print(f"  ✗ Customer Engagement Agent test failed: {e}")
+        import traceback
+        traceback.print_exc()
+        return False
+
+
 def test_integration():
     """Test integration between components"""
     print("\nTesting Component Integration...")
     
     try:
         from data_analysis_agent import DataAnalysisAgent, create_data_analysis_handler
+        from customer_engagement_agent import CustomerEngagementAgent, create_customer_engagement_handler
         from master_orchestrator import MasterOrchestrator, AgentType
         
         # Initialize components
-        agent = DataAnalysisAgent()
+        data_agent = DataAnalysisAgent()
+        engagement_agent = CustomerEngagementAgent()
         orchestrator = MasterOrchestrator(max_workers=5)
         print("  ✓ Components initialized")
         
-        # Create and register handler
-        handler = create_data_analysis_handler(agent)
-        orchestrator.register_agent(AgentType.DATA_ANALYSIS, handler)
-        print("  ✓ Handler registered")
+        # Create and register handlers
+        data_handler = create_data_analysis_handler(data_agent)
+        engagement_handler = create_customer_engagement_handler(engagement_agent)
+        orchestrator.register_agent(AgentType.DATA_ANALYSIS, data_handler)
+        orchestrator.register_agent(AgentType.CUSTOMER_ENGAGEMENT, engagement_handler)
+        print("  ✓ Handlers registered")
         
         # Start orchestrator
         orchestrator.start()
@@ -266,6 +340,9 @@ def run_all_tests():
     
     # Test Data Analysis Agent
     results.append(("Data Analysis Agent", test_data_analysis_agent()))
+    
+    # Test Customer Engagement Agent
+    results.append(("Customer Engagement Agent", test_customer_engagement_agent()))
     
     # Test Master Orchestrator
     results.append(("Master Orchestrator", test_master_orchestrator()))

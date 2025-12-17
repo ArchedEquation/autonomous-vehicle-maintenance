@@ -64,12 +64,15 @@ python data_analysis_integration_demo.py test
 .
 ├── master_orchestrator.py              # Main workflow orchestrator
 ├── data_analysis_agent.py              # Real-time telematics analysis
+├── customer_engagement_agent.py        # Voice/chat customer engagement
 ├── orchestrator_integration_example.py # Orchestrator with ML models
 ├── data_analysis_integration_demo.py   # Full system demo
+├── customer_engagement_demo.py         # Customer engagement demos
 ├── test_system.py                      # System verification tests
 │
 ├── ORCHESTRATOR_README.md              # Orchestrator documentation
-├── DATA_ANALYSIS_AGENT_README.md       # Agent documentation
+├── DATA_ANALYSIS_AGENT_README.md       # Data analysis docs
+├── CUSTOMER_ENGAGEMENT_README.md       # Customer engagement docs
 ├── QUICK_START_GUIDE.md                # Getting started guide
 ├── SYSTEM_OVERVIEW.md                  # Architecture overview
 ├── README.md                           # This file
@@ -161,6 +164,50 @@ status = orchestrator.get_workflow_status(workflow_id)
 - UEBA audit logging
 - Agent coordination
 - Decision making
+
+### 3. Customer Engagement Agent
+**Voice/chat-capable customer communication**
+
+```python
+from customer_engagement_agent import (
+    CustomerEngagementAgent,
+    DiagnosticReport,
+    CustomerProfile,
+    UrgencyLevel
+)
+
+agent = CustomerEngagementAgent()
+
+report = DiagnosticReport(
+    vehicle_id='VEH001',
+    customer_id='CUST001',
+    urgency_level=UrgencyLevel.CRITICAL,
+    issues_detected=['engine overheating'],
+    recommended_services=['cooling_system_repair'],
+    estimated_cost=850.00,
+    risk_description='immediate engine damage risk'
+)
+
+customer = CustomerProfile(
+    customer_id='CUST001',
+    name='John Smith',
+    phone='+1-555-0100',
+    email='john@example.com',
+    preferred_channel=CommunicationChannel.PHONE_CALL
+)
+
+result = agent.engage_customer(report, customer)
+```
+
+**Features:**
+- Multi-channel communication (phone, SMS, email, app)
+- Sentiment analysis (ML-based + rule-based)
+- Response prediction (6 types)
+- Natural dialogue generation
+- Objection handling
+- Intelligent escalation
+- Preference capture
+- Multi-modal notifications
 
 ## 📊 Example Workflow
 
@@ -260,7 +307,8 @@ python data_analysis_integration_demo.py test
 - **[QUICK_START_GUIDE.md](QUICK_START_GUIDE.md)** - Get started quickly
 - **[SYSTEM_OVERVIEW.md](SYSTEM_OVERVIEW.md)** - Architecture and design
 - **[ORCHESTRATOR_README.md](ORCHESTRATOR_README.md)** - Orchestrator details
-- **[DATA_ANALYSIS_AGENT_README.md](DATA_ANALYSIS_AGENT_README.md)** - Agent details
+- **[DATA_ANALYSIS_AGENT_README.md](DATA_ANALYSIS_AGENT_README.md)** - Data analysis agent details
+- **[CUSTOMER_ENGAGEMENT_README.md](CUSTOMER_ENGAGEMENT_README.md)** - Customer engagement agent details
 
 ## 🔍 Monitoring
 
