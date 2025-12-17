@@ -1,0 +1,54 @@
+{
+  "num_samples": 10000,
+  "num_sequences": 9985,
+  "sequence_length": 15,
+  "num_features": 24,
+  "feature_columns": [
+    "engine_temp",
+    "rpm",
+    "fuel_consumption",
+    "battery_voltage",
+    "oil_pressure",
+    "coolant_level",
+    "mileage",
+    "avg_speed",
+    "acceleration",
+    "braking",
+    "trip_duration",
+    "ambient_temp",
+    "humidity",
+    "road_condition",
+    "vehicle_age",
+    "last_maintenance_days",
+    "previous_failures",
+    "vibration",
+    "noise_level",
+    "emissions",
+    "temp_rpm_interaction",
+    "age_mileage_ratio",
+    "maintenance_mileage",
+    "vibration_noise"
+  ],
+  "components": [
+    "engine",
+    "transmission",
+    "brakes",
+    "battery",
+    "cooling_system"
+  ],
+  "severities": [
+    "low",
+    "medium",
+    "high",
+    "critical"
+  ],
+  "train_samples": 8487,
+  "test_samples": 1498,
+  "model_params": 1341034,
+  "final_metrics": {
+    "test_loss": 0.5512645840644836,
+    "component_accuracy": 0.9666221737861633,
+    "time_mae": 0.05596078559756279,
+    "severity_accuracy": 0.8124165534973145
+  }
+}
