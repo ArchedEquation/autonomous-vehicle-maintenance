@@ -31,6 +31,20 @@ All notable changes to the Vehicle Maintenance Multi-Agent System.
 - Sensor health monitoring
 - Confidence scoring
 
+**Scheduling Agent** (`scheduling_agent.py`)
+- ML-based service center load prediction (LSTM)
+- Multi-factor optimization algorithm (6 factors)
+- Emergency override logic with appointment bumping
+- Intelligent load balancing across centers
+- Parts availability checking and reservation
+- Technician expertise matching
+- Rescheduling with reason tracking
+- Cancellation with resource release
+- Service center notifications
+- Real-time slot availability
+- Operating hours compliance
+- Capacity management
+
 **Customer Engagement Agent** (`customer_engagement_agent.py`)
 - Multi-channel communication (phone, SMS, email, app, chat)
 - Sentiment analysis (BERT model + rule-based fallback)

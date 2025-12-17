@@ -46,6 +46,14 @@ Welcome to the Vehicle Maintenance Multi-Agent System documentation.
   - Objection handling
   - Intelligent escalation
 
+- **[Scheduling Agent](SCHEDULING_AGENT_README.md)** - Appointment optimization
+  - ML-based load prediction
+  - Multi-factor optimization
+  - Emergency override logic
+  - Load balancing
+  - Parts availability
+  - Expertise matching
+
 #### Reference Documentation
 - **[API Reference](API_REFERENCE.md)** - Complete API documentation
   - All classes and methods

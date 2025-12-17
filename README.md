@@ -210,6 +210,44 @@ result = agent.engage_customer(report, customer)
 - Preference capture
 - Multi-modal notifications
 
+### 4. Scheduling Agent
+**Intelligent appointment optimization and load balancing**
+
+```python
+from scheduling_agent import (
+    SchedulingAgent,
+    BookingRequest,
+    UrgencyLevel
+)
+
+agent = SchedulingAgent()
+
+request = BookingRequest(
+    request_id="REQ001",
+    vehicle_id='VEH001',
+    customer_id='CUST001',
+    urgency_level=UrgencyLevel.HIGH,
+    services_required=['brake_repair'],
+    estimated_duration=2.5,
+    diagnostic_details={'issue': 'brake_wear'},
+    customer_preferences={'preferred_time': 'morning'},
+    parts_needed=['brake_pads'],
+    customer_location={'lat': 40.7128, 'lon': -74.0060}
+)
+
+result = agent.schedule_appointment(request)
+```
+
+**Features:**
+- ML-based load prediction (LSTM)
+- Multi-factor optimization (6 factors)
+- Emergency override logic
+- Intelligent load balancing
+- Parts availability checking
+- Technician expertise matching
+- Rescheduling and cancellation
+- Service center notifications
+
 ## 📊 Example Workflow
 
 ### Critical Engine Overheating
@@ -463,12 +501,14 @@ autonomous-vehicle-maintenance/
 ├── 🤖 Agent Systems
 │   ├── master_orchestrator.py              # Workflow coordination
 │   ├── data_analysis_agent.py              # Telematics processing
-│   └── customer_engagement_agent.py        # Customer communication
+│   ├── customer_engagement_agent.py        # Customer communication
+│   └── scheduling_agent.py                 # Appointment optimization
 │
 ├── 🎮 Demo & Integration
 │   ├── orchestrator_integration_example.py # Orchestrator with ML
 │   ├── data_analysis_integration_demo.py   # Full system demo
-│   └── customer_engagement_demo.py         # Engagement demos
+│   ├── customer_engagement_demo.py         # Engagement demos
+│   └── scheduling_demo.py                  # Scheduling demos
 │
 ├── 🧪 Testing
 │   └── test_system.py                      # System verification
@@ -480,7 +520,8 @@ autonomous-vehicle-maintenance/
 │   ├── SYSTEM_OVERVIEW.md                  # Architecture
 │   ├── ORCHESTRATOR_README.md              # Orchestrator docs
 │   ├── DATA_ANALYSIS_AGENT_README.md       # Data analysis docs
-│   └── CUSTOMER_ENGAGEMENT_README.md       # Engagement docs
+│   ├── CUSTOMER_ENGAGEMENT_README.md       # Engagement docs
+│   └── SCHEDULING_AGENT_README.md          # Scheduling docs
 │
 ├── 🧠 ML Models
 │   ├── deep_vae_full_model/                # Anomaly detection (VAE)

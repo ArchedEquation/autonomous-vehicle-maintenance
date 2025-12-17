@@ -2,7 +2,7 @@ data
 weights_and_metadata
 best_model.keras
 scaler.pkl
-
+deep_vae_full_model
 best_customer_response_model.keras
 .ipynb_checkpoints
 
@@ -11,6 +11,7 @@ best_customer_response_model.keras
 orchestrator_audit.log
 data_analysis_agent.log
 customer_engagement_agent.log
+scheduling_agent.log
 
 # Python cache
 __pycache__/
