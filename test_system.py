@@ -30,6 +30,13 @@ def test_imports():
         return False
     
     try:
+        from scheduling_agent import SchedulingAgent, BookingRequest, UrgencyLevel
+        print("  ✓ Scheduling Agent imported")
+    except Exception as e:
+        print(f"  ✗ Scheduling Agent import failed: {e}")
+        return False
+    
+    try:
         from orchestrator_integration_example import VehicleMaintenanceAgentSystem
         print("  ✓ Integration Example imported")
     except Exception as e:
@@ -217,6 +224,56 @@ def test_customer_engagement_agent():
         return False
 
 
+def test_scheduling_agent():
+    """Test Scheduling Agent basic functionality"""
+    print("\nTesting Scheduling Agent...")
+    
+    try:
+        from scheduling_agent import (
+            SchedulingAgent,
+            BookingRequest,
+            UrgencyLevel
+        )
+        
+        # Initialize agent
+        agent = SchedulingAgent()
+        print("  ✓ Agent initialized")
+        
+        # Create test booking request
+        request = BookingRequest(
+            request_id="TEST001",
+            vehicle_id="VEH001",
+            customer_id="CUST001",
+            urgency_level=UrgencyLevel.NORMAL,
+            services_required=['oil_change', 'inspection'],
+            estimated_duration=1.5,
+            diagnostic_details={'issue': 'routine_maintenance'},
+            customer_preferences={'preferred_time': 'morning'},
+            parts_needed=['oil_filter'],
+            customer_location={'lat': 40.7128, 'lon': -74.0060}
+        )
+        print("  ✓ Booking request created")
+        
+        # Schedule appointment
+        result = agent.schedule_appointment(request)
+        print(f"  ✓ Scheduling completed: Success={result.success}")
+        
+        # Check result structure
+        if result.success:
+            assert result.appointment is not None
+            assert result.appointment.vehicle_id == 'VEH001'
+            assert result.appointment.customer_id == 'CUST001'
+            print("  ✓ Result structure validated")
+        
+        return True
+        
+    except Exception as e:
+        print(f"  ✗ Scheduling Agent test failed: {e}")
+        import traceback
+        traceback.print_exc()
+        return False
+
+
 def test_integration():
     """Test integration between components"""
     print("\nTesting Component Integration...")
@@ -343,6 +400,9 @@ def run_all_tests():
     
     # Test Customer Engagement Agent
     results.append(("Customer Engagement Agent", test_customer_engagement_agent()))
+    
+    # Test Scheduling Agent
+    results.append(("Scheduling Agent", test_scheduling_agent()))
     
     # Test Master Orchestrator
     results.append(("Master Orchestrator", test_master_orchestrator()))
