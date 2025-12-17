@@ -308,8 +308,17 @@ if __name__ == "__main__":
     generator = SyntheticVehicleGenerator(num_vehicles=10)
     vehicles = generator.generate_all_vehicles()
     
-    # Save to file
-    generator.save_to_json("mock_infrastructure/synthetic_vehicles.json")
+    # Save to file (handle both running from root and from mock_infrastructure)
+    import os
+    if os.path.basename(os.getcwd()) == "mock_infrastructure":
+        # Running from within mock_infrastructure directory
+        filepath = "synthetic_vehicles.json"
+    else:
+        # Running from parent directory
+        filepath = "mock_infrastructure/synthetic_vehicles.json"
+    
+    generator.save_to_json(filepath)
+    print(f"✓ Saved to: {os.path.abspath(filepath)}")
     
     # Print summary
     print("\n" + "="*80)

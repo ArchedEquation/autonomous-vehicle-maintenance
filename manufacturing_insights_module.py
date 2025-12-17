@@ -961,3 +961,38 @@ class ManufacturingInsightsModule:
     def register_report_callback(self, callback: callable):
         """Register callback for new CAPA reports"""
         self.report_callbacks.append(callback)
+    
+    def generate_summary_report(self) -> Dict[str, Any]:
+        """Generate summary report of manufacturing insights"""
+        
+        # Count CAPAs by status
+        pending_capas = sum(1 for r in self.capa_reports if r.status == ActionStatus.PENDING.value)
+        in_progress_capas = sum(1 for r in self.capa_reports if r.status == ActionStatus.IN_PROGRESS.value)
+        completed_capas = sum(1 for r in self.capa_reports if r.status == ActionStatus.COMPLETED.value)
+        
+        # Top failing components
+        component_failures = Counter(r.component for r in self.failure_records)
+        top_components = component_failures.most_common(10)
+        
+        # Recent failures (last 30 days)
+        cutoff_date = datetime.utcnow() - timedelta(days=30)
+        recent_failures = [
+            r for r in self.failure_records
+            if datetime.fromisoformat(r.timestamp) > cutoff_date
+        ]
+        
+        # Severity distribution
+        severity_dist = Counter(r.severity for r in self.failure_records)
+        
+        return {
+            "total_failure_records": len(self.failure_records),
+            "recent_failures_30d": len(recent_failures),
+            "total_capa_reports": len(self.capa_reports),
+            "pending_capas": pending_capas,
+            "in_progress_capas": in_progress_capas,
+            "completed_capas": completed_capas,
+            "top_failing_components": top_components,
+            "severity_distribution": dict(severity_dist),
+            "total_components_analyzed": len(self.component_analyses),
+            "total_impact_measurements": sum(len(m) for m in self.impact_measurements.values())
+        }
