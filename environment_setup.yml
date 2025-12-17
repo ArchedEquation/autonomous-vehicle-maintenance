@@ -1,0 +1,45 @@
+name: ey2
+channels:
+  - conda-forge
+  - pytorch
+  - huggingface
+dependencies:
+  # Core Python packages
+  - python=3.10
+  - pip
+  
+  # Data Science & Machine Learning
+  - numpy
+  - pandas
+  - scikit-learn
+  - scipy
+  
+  # Deep Learning Frameworks
+  - tensorflow
+  - pytorch
+  - torchvision
+  - torchaudio
+  
+  # Transformers & NLP
+  - transformers
+  - tokenizers
+  
+  # Data Visualization
+  - matplotlib
+  - seaborn
+  
+  # Data Preprocessing & Scaling
+  - scikit-learn
+  
+  # Jupyter & Development
+  - jupyter
+  - jupyterlab
+  - ipykernel
+  
+  # Additional utilities
+  - tqdm
+  - requests
+  
+  # Pip packages (for packages not available in conda)
+  - pip:
+    - torch-audio  # if needed for audio processing
