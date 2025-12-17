@@ -305,11 +305,14 @@ python data_analysis_integration_demo.py test
 
 ## 📚 Documentation
 
-- **[Quick Start Guide](docs/QUICK_START_GUIDE.md)** - Get started quickly
+**[📖 Complete Documentation Index](docs/README.md)**
+
+### Quick Links
+- **[Quick Start Guide](docs/QUICK_START_GUIDE.md)** - Get started in minutes
 - **[System Overview](docs/SYSTEM_OVERVIEW.md)** - Architecture and design
-- **[Master Orchestrator](docs/ORCHESTRATOR_README.md)** - Orchestrator details
-- **[Data Analysis Agent](docs/DATA_ANALYSIS_AGENT_README.md)** - Data analysis agent details
-- **[Customer Engagement Agent](docs/CUSTOMER_ENGAGEMENT_README.md)** - Customer engagement agent details
+- **[Master Orchestrator](docs/ORCHESTRATOR_README.md)** - Workflow coordination
+- **[Data Analysis Agent](docs/DATA_ANALYSIS_AGENT_README.md)** - Telematics processing
+- **[Customer Engagement Agent](docs/CUSTOMER_ENGAGEMENT_README.md)** - Customer communication
 
 ## 🔍 Monitoring
 
@@ -451,5 +454,61 @@ See `requirements.txt` for complete list.
 **Status**: Production Ready ✓  
 **Version**: 1.0.0  
 **Last Updated**: December 2024
+
+## 📂 Project Structure
+
+```
+autonomous-vehicle-maintenance/
+│
+├── 🤖 Agent Systems
+│   ├── master_orchestrator.py              # Workflow coordination
+│   ├── data_analysis_agent.py              # Telematics processing
+│   └── customer_engagement_agent.py        # Customer communication
+│
+├── 🎮 Demo & Integration
+│   ├── orchestrator_integration_example.py # Orchestrator with ML
+│   ├── data_analysis_integration_demo.py   # Full system demo
+│   └── customer_engagement_demo.py         # Engagement demos
+│
+├── 🧪 Testing
+│   └── test_system.py                      # System verification
+│
+├── 📚 Documentation (docs/)
+│   ├── README.md                           # Documentation index
+│   ├── API_REFERENCE.md                    # Complete API docs
+│   ├── QUICK_START_GUIDE.md                # Getting started
+│   ├── SYSTEM_OVERVIEW.md                  # Architecture
+│   ├── ORCHESTRATOR_README.md              # Orchestrator docs
+│   ├── DATA_ANALYSIS_AGENT_README.md       # Data analysis docs
+│   └── CUSTOMER_ENGAGEMENT_README.md       # Engagement docs
+│
+├── 🧠 ML Models
+│   ├── deep_vae_full_model/                # Anomaly detection (VAE)
+│   ├── scaler.pkl                          # Feature scaler
+│   ├── weights_and_metadata/               # LSTM models
+│   └── sentiment_model_weights/            # Sentiment analysis (BERT)
+│
+├── 📊 Data
+│   └── data/
+│       ├── vehicle_sensor_data.csv
+│       ├── vehicle_failure_data.csv
+│       ├── service_center_load_data.csv
+│       └── appointment_scheduling_data.csv
+│
+├── 📓 Notebooks
+│   ├── vehicle_anomaly.ipynb
+│   ├── vehicle_failure_prediction.ipynb
+│   ├── customer_sentiment_analysis.ipynb
+│   ├── service_center_load_prediction.ipynb
+│   └── appointment_scheduling.ipynb
+│
+└── ⚙️ Configuration
+    ├── requirements.txt                    # Python dependencies
+    ├── environment_setup.yml               # Conda environment
+    ├── .gitignore                          # Git ignore rules
+    └── README.md                           # This file
+```
+
+---
 
 **Ready to start?** Run: `python test_system.py`

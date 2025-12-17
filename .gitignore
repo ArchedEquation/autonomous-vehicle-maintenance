@@ -2,7 +2,7 @@ data
 weights_and_metadata
 best_model.keras
 scaler.pkl
-sentiment_model_weights
+
 best_customer_response_model.keras
 .ipynb_checkpoints
 
@@ -10,13 +10,14 @@ best_customer_response_model.keras
 *.log
 orchestrator_audit.log
 data_analysis_agent.log
+customer_engagement_agent.log
 
 # Python cache
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
-deep_vae_full_model
+
 # Virtual environments
 venv/
 env/
