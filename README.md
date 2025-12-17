@@ -69,13 +69,14 @@ python data_analysis_integration_demo.py test
 ├── data_analysis_integration_demo.py   # Full system demo
 ├── customer_engagement_demo.py         # Customer engagement demos
 ├── test_system.py                      # System verification tests
-│
-├── ORCHESTRATOR_README.md              # Orchestrator documentation
-├── DATA_ANALYSIS_AGENT_README.md       # Data analysis docs
-├── CUSTOMER_ENGAGEMENT_README.md       # Customer engagement docs
-├── QUICK_START_GUIDE.md                # Getting started guide
-├── SYSTEM_OVERVIEW.md                  # Architecture overview
 ├── README.md                           # This file
+│
+├── docs/                               # Documentation
+│   ├── ORCHESTRATOR_README.md          # Orchestrator documentation
+│   ├── DATA_ANALYSIS_AGENT_README.md   # Data analysis docs
+│   ├── CUSTOMER_ENGAGEMENT_README.md   # Customer engagement docs
+│   ├── QUICK_START_GUIDE.md            # Getting started guide
+│   └── SYSTEM_OVERVIEW.md              # Architecture overview
 │
 ├── requirements.txt                    # Python dependencies
 ├── environment_setup.yml               # Conda environment
@@ -304,11 +305,11 @@ python data_analysis_integration_demo.py test
 
 ## 📚 Documentation
 
-- **[QUICK_START_GUIDE.md](QUICK_START_GUIDE.md)** - Get started quickly
-- **[SYSTEM_OVERVIEW.md](SYSTEM_OVERVIEW.md)** - Architecture and design
-- **[ORCHESTRATOR_README.md](ORCHESTRATOR_README.md)** - Orchestrator details
-- **[DATA_ANALYSIS_AGENT_README.md](DATA_ANALYSIS_AGENT_README.md)** - Data analysis agent details
-- **[CUSTOMER_ENGAGEMENT_README.md](CUSTOMER_ENGAGEMENT_README.md)** - Customer engagement agent details
+- **[Quick Start Guide](docs/QUICK_START_GUIDE.md)** - Get started quickly
+- **[System Overview](docs/SYSTEM_OVERVIEW.md)** - Architecture and design
+- **[Master Orchestrator](docs/ORCHESTRATOR_README.md)** - Orchestrator details
+- **[Data Analysis Agent](docs/DATA_ANALYSIS_AGENT_README.md)** - Data analysis agent details
+- **[Customer Engagement Agent](docs/CUSTOMER_ENGAGEMENT_README.md)** - Customer engagement agent details
 
 ## 🔍 Monitoring
 
